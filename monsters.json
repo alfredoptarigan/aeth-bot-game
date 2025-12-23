@@ -1,0 +1,104 @@
+{
+  "monsters": [
+    {
+      "id": 1,
+      "name": "Poring",
+      "level": 1,
+      "hp": 50,
+      "exp": 10,
+      "element": "water",
+      "description": "Slime lucu berwarna pink yang jinak",
+      "image": "https://static.divine-pride.net/images/mobs/png/1002.png"
+    },
+    {
+      "id": 2,
+      "name": "Lunatic",
+      "level": 2,
+      "hp": 80,
+      "exp": 18,
+      "element": "neutral",
+      "description": "Kelinci putih berbulu lembut",
+      "image": "https://static.divine-pride.net/images/mobs/png/1063.png"
+    },
+    {
+      "id": 3,
+      "name": "Fabre",
+      "level": 3,
+      "hp": 120,
+      "exp": 28,
+      "element": "earth",
+      "description": "Ulat hijau yang suka makan daun",
+      "image": "https://static.divine-pride.net/images/mobs/png/1007.png"
+    },
+    {
+      "id": 4,
+      "name": "Willow",
+      "level": 4,
+      "hp": 170,
+      "exp": 42,
+      "element": "earth",
+      "description": "Pohon kecil yang hidup dan bisa bergerak",
+      "image": "https://static.divine-pride.net/images/mobs/png/1010.png"
+    },
+    {
+      "id": 5,
+      "name": "Chonchon",
+      "level": 5,
+      "hp": 230,
+      "exp": 60,
+      "element": "wind",
+      "description": "Lalat besar dengan sayap berisik",
+      "image": "https://static.divine-pride.net/images/mobs/png/1011.png"
+    },
+    {
+      "id": 6,
+      "name": "Roda Frog",
+      "level": 6,
+      "hp": 300,
+      "exp": 82,
+      "element": "water",
+      "description": "Katak hijau yang suka melompat",
+      "image": "https://static.divine-pride.net/images/mobs/png/1012.png"
+    },
+    {
+      "id": 7,
+      "name": "Rocker",
+      "level": 7,
+      "hp": 380,
+      "exp": 108,
+      "element": "earth",
+      "description": "Belalang yang suka bermain musik",
+      "image": "https://static.divine-pride.net/images/mobs/png/1052.png"
+    },
+    {
+      "id": 8,
+      "name": "Thief Bug",
+      "level": 8,
+      "hp": 470,
+      "exp": 140,
+      "element": "dark",
+      "description": "Serangga pencuri yang gesit",
+      "image": "https://static.divine-pride.net/images/mobs/png/1051.png"
+    },
+    {
+      "id": 9,
+      "name": "Condor",
+      "level": 9,
+      "hp": 570,
+      "exp": 178,
+      "element": "wind",
+      "description": "Burung pemangsa dari padang pasir",
+      "image": "https://static.divine-pride.net/images/mobs/png/1009.png"
+    },
+    {
+      "id": 10,
+      "name": "Poporing",
+      "level": 10,
+      "hp": 680,
+      "exp": 222,
+      "element": "poison",
+      "description": "Poring hijau yang beracun",
+      "image": "https://static.divine-pride.net/images/mobs/png/1031.png"
+    }
+  ]
+}
