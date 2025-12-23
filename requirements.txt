@@ -1,2 +1,5 @@
 discord.py
 python-dotenv
+mysql-connector-python
+sqlalchemy
+alembic
