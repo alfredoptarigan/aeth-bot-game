@@ -3,6 +3,8 @@ Script untuk membuat database dan tabel di MySQL
 Jalankan ini PERTAMA sebelum migrasi data
 """
 import os
+import sys
+
 from dotenv import load_dotenv
 import mysql.connector
 
