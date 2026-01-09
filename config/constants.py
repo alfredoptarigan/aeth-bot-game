@@ -45,6 +45,11 @@ STAT_TIER_2_COST = 125
 STAT_TIER_3_COST = 175
 STAT_TIER_4_COST = 250
 
+#expansion inventory
+INVENTORY_BASE_UPGRADE_COST = 500
+INVENTORY_COST_MULTIPLIER = 1.5
+INVENTORY_SLOTS_INCREASE = 5
+
 # Valid Stats for Upgrade
 VALID_STATS = ['atk', 'spd', 'def', 'dex', 'crit', 'mdmg', 'hp', 'mp']
 

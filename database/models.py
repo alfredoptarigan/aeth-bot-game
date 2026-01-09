@@ -90,6 +90,13 @@ class UserRole(Base):
         {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8mb4'},
     )
 
+class expansionInventory(Base):
+    __tablename__ = 'expansion_inventory'
+    
+    user_id = Column(BigInteger, primary_key=True)
+    upgrade_level = Column(Integer, default=0)
+    upgrade_cost = Column(Integer, default=500)
+
 class ShiftConfig(Base):
     __tablename__ = 'shift_config'
     

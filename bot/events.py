@@ -11,7 +11,7 @@ from config.constants import EXP_COOLDOWN, EXP_PER_MESSAGE_MIN, EXP_PER_MESSAGE_
 # Store user experience cooldowns
 user_exp_cooldown = {}
 
-def setup_events(bot, character_commands, economy_commands, combat_commands, help_commands, leaderboard_commands, inventory_commands, shop_commands, shift_commands):
+def setup_events(bot, character_commands, economy_commands, combat_commands, help_commands, leaderboard_commands, inventory_commands, shop_commands, shift_commands, extenven_commands):
     """Setup all bot events"""
     
     @bot.event
@@ -32,7 +32,7 @@ def setup_events(bot, character_commands, economy_commands, combat_commands, hel
             await handle_experience_gain(message, user_id, current_time)
             
         # Handle commands
-        await handle_commands(message, character_commands, economy_commands, combat_commands, help_commands, leaderboard_commands, inventory_commands, shop_commands, shift_commands)
+        await handle_commands(message, character_commands, economy_commands, combat_commands, help_commands, leaderboard_commands, inventory_commands, shop_commands, shift_commands, extenven_commands)
 
 async def handle_experience_gain(message, user_id, current_time):
     """Handle experience gain from messages"""
@@ -60,7 +60,7 @@ async def handle_experience_gain(message, user_id, current_time):
 
     update_full_user_data(user_id, *user_data)
 
-async def handle_commands(message, character_commands, economy_commands, combat_commands, help_commands, leaderboard_commands, inventory_commands, shop_commands, shift_commands):
+async def handle_commands(message, character_commands, economy_commands, combat_commands, help_commands, leaderboard_commands, inventory_commands, shop_commands, shift_commands, extenven_commands):
     """Handle command routing"""
     msg_lower_parts = message.content.lower().split()
     if not msg_lower_parts:
@@ -92,6 +92,10 @@ async def handle_commands(message, character_commands, economy_commands, combat_
         await combat_commands.handle_reset_hunt_time(message)
     elif command == f'{PREFIX}loophunt':
         await combat_commands.handle_loop_hunt(message)
+
+    #expansion inventory commands
+    elif command == f'{PREFIX}expandinven':
+        await extenven_commands.handle_expand_inventory(message, msg_lower_parts)
     
     # Inventory commands
     elif command == f'{PREFIX}inventory':

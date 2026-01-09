@@ -12,19 +12,21 @@ class ShopCommands(BaseCommand):
     
     async def handle_buy_menu(self, message):
         """Handle buy menu command"""
-        menu_text = f"""
-        Selamat datang di Toko Aetherion Game!
-        Silakan pilih kategori pembelian:
-        1. **{self.prefix}buy weapon <Nama_Senjata>**: Beli Senjata (Lihat daftar: `{self.prefix}shop weapon`)
-        2. **{self.prefix}buy armor <Nama_Armor>**: Beli Baju Zirah (Lihat daftar: `{self.prefix}shop armor`)
-        3. **{self.prefix}buy role <Nama_Role>**: Beli Role Discord (Lihat daftar: `{self.prefix}shop role`)
+        menu_text = (
+        f"Selamat datang di Toko Aetherion Game!\n"
+        f"Silakan pilih kategori pembelian:\n"
+        f"1. **{self.prefix}buy weapon <Nama_Senjata>**: Beli Senjata (Lihat daftar: `{self.prefix}shop weapon`)\n"
+        f"2. **{self.prefix}buy armor <Nama_Armor>**: Beli Baju Zirah (Lihat daftar: `{self.prefix}shop armor`)\n"
+        f"3. **{self.prefix}buy role <Nama_Role>**: Beli Role Discord (Lihat daftar: `{self.prefix}shop role`)\n"
 
-        **Lainnya:**
-        * **{self.prefix}sell <Item_Name> <Jumlah>**: Jual item (50% harga beli).
-        * **{self.prefix}inventory**: Lihat semua item yang Anda miliki.
+        f"\n"
+
+        f"**Lainnya:**\n"
+        f"1. **{self.prefix}sell <Item_Name> <Jumlah>**: Jual item (50% harga beli).\n"
+        f"2. **{self.prefix}inventory**: Lihat semua item yang Anda miliki.\n"
         
-        Contoh: `{self.prefix}buy role Knight`
-        """
+        f"Contoh: `{self.prefix}buy role Knight`"
+        )
         embed = discord.Embed(
             title="🛒 KATEGORI TOKO (SHOP)",
             description=menu_text,

@@ -44,10 +44,11 @@ class HelpCommands(BaseCommand):
         e2.add_field(name=f"{self.prefix}unequip <Item_Name>", value=f"> Lepas item yang di-equip (cth: `{self.prefix}unequip Iron Sword`).", inline=False)
         pages.append(e2)
 
-        # Page 3: upgrade / sell / give / help
+        # Page 3: upgrade /expension / sell / give / help
         e3 = discord.Embed(title="📚 Help Command Aetherion Game — (3/3)", color=discord.Color.red())
         e3.add_field(name=f"{self.prefix}upgrade <stat> <amount>",
                      value=f"> Tingkatkan stat dengan uang ({STAT_UPGRADE_COST} ACR per poin).\nStat yang dapat di-upgrade: `atk`, `spd`, `def`, `dex`, `crit`, `mdmg`, `hp`, `mp`.", inline=False)
+        e3.add_field(name=f"{self.prefix}expandinven", value="> Perluas slot inventaris Anda sebesar 5 slot dengan biaya tertentu.", inline=False)
         e3.add_field(name=f"{self.prefix}sell <Item_Name> <Jumlah>", value="> Jual item Anda (50% harga beli).", inline=False)
         e3.add_field(name=f"{self.prefix}givemoney <@user> <amount>", value="> Kirim sejumlah uang (ACR) kepada pengguna lain.", inline=False)
         e3.add_field(name=f"{self.prefix}help", value="> Menampilkan daftar perintah ini.", inline=False)

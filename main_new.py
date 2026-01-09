@@ -13,6 +13,7 @@ from commands.help import HelpCommands
 from commands.leaderboard import LeaderboardCommands
 from commands.inventory import InventoryCommands
 from commands.shop import ShopCommands
+from commands.extenven import ExpansionInventoryCommands
 # from commands.shift import ShiftCommands  # DISABLED - Shift commands
 from config.constants import PREFIX
 
@@ -21,6 +22,7 @@ bot = get_bot()
 character_commands = CharacterCommands()
 economy_commands = EconomyCommands()
 combat_commands = CombatCommands()
+extenven_commands = ExpansionInventoryCommands()
 help_commands = HelpCommands()
 leaderboard_commands = LeaderboardCommands()
 inventory_commands = InventoryCommands()
@@ -29,7 +31,7 @@ shop_commands = ShopCommands()
 shift_commands = None  # Placeholder for disabled shift commands
 
 # Setup events
-setup_events(bot, character_commands, economy_commands, combat_commands, help_commands, leaderboard_commands, inventory_commands, shop_commands, shift_commands)
+setup_events(bot, character_commands, economy_commands, combat_commands, help_commands, leaderboard_commands, inventory_commands, shop_commands, shift_commands, extenven_commands)
 
 if __name__ == "__main__":
     print("🚀 Starting Aetherion Game Bot (Refactored Version)...")
