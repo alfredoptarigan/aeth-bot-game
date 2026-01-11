@@ -10,7 +10,6 @@ def get_inventory_upgrade_cost(user_id):
     SELECT upgrade_cost FROM inventory_upgrades
     WHERE user_id = %s
     ORDER BY upgrade_level DESC
-    LIMIT 1
     """
     result = execute_query(query, (user_id,))
     if result:

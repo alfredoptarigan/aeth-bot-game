@@ -40,6 +40,8 @@ def create_level_up_embed(user, new_level, reward, stat_boosted):
         value=f"💵 {reward:,} ACR | +5 {stat_boosted.upper()}", 
         inline=False
     )
+
+    embed.set_thumbnail(url=user.display_avatar.url)
     return embed
 
 def create_stats_embed(user, user_data, total_stats, role=None):
