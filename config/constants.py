@@ -54,7 +54,7 @@ INVENTORY_SLOTS_INCREASE = 5
 VALID_STATS = ['atk', 'spd', 'def', 'dex', 'crit', 'mdmg', 'hp', 'mp']
 
 # Default User Stats
-DEFAULT_USER_DATA = (0, 1, 0, '2000-01-01', 5, 5, 5, 5, 5, 5, 100, 50, 10, None, None, 0, '2000-01-01', 0.0, 0, '2000-01-01')
+DEFAULT_USER_DATA = (0, 1, 0, '2000-01-01', 5, 5, 5, 5, 5, 5, 100, 50, 10, None, None, 0, '2000-01-01', 0.0, 0, '2000-01-01', 50)
 
 
 UPPER_LEVEL_ACCESS = [

@@ -43,7 +43,7 @@ class CharacterCommands(BaseCommand):
             return
 
         user_data = get_user_data(user_id)
-        exp, level, money, last_daily, atk, spd, def_stat, dex, crit, mdmg, hp, mp, slots, equipped_weapon, equipped_armor, dice_rolls, last_dice_reset, last_fight_time, hunt_count, hunt_reset = user_data
+        exp, level, money, last_daily, atk, spd, def_stat, dex, crit, mdmg, hp, mp, slots, equipped_weapon, equipped_armor, dice_rolls, last_dice_reset, last_fight_time, hunt_count, hunt_reset, max_inventory = user_data
 
         # Get current base stat
         stat_mapping = {
@@ -86,7 +86,7 @@ class CharacterCommands(BaseCommand):
             increment = amount * 5
 
         money -= cost
-        update_full_user_data(user_id, exp, level, money, last_daily, atk, spd, def_stat, dex, crit, mdmg, hp, mp, slots, equipped_weapon, equipped_armor, dice_rolls, last_dice_reset, last_fight_time, hunt_count, hunt_reset)
+        update_full_user_data(user_id, exp, level, money, last_daily, atk, spd, def_stat, dex, crit, mdmg, hp, mp, slots, equipped_weapon, equipped_armor, dice_rolls, last_dice_reset, last_fight_time, hunt_count, hunt_reset, max_inventory)
 
         embed = discord.Embed(color=discord.Color.green())
         embed.set_author(name=f"{message.author.display_name} | Status Upgrade!")

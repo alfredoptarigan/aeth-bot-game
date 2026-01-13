@@ -46,8 +46,11 @@ def create_level_up_embed(user, new_level, reward, stat_boosted):
 
 def create_stats_embed(user, user_data, total_stats, role=None):
     """Create character stats embed"""
-    current_exp, current_level, current_currency, _, base_atk, base_spd, base_def, base_dex, base_crit, base_mdmg, base_hp, base_mp, max_slots, equipped_weapon, equipped_armor, *_ = user_data
+    current_exp, current_level, current_currency, _, base_atk, base_spd, base_def, base_dex, base_crit, base_mdmg, base_hp, base_mp, max_slots, equipped_weapon, equipped_armor, *_, max_inventory = user_data
     total_atk, total_spd, total_def, total_dex, total_crit, total_mdmg, total_hp, total_mp = total_stats
+
+    from database.queries.inventory_queries import get_inventory_count
+    inventory_count = get_inventory_count(user.id)
 
     from game.leveling import required_exp_for_level
     required_exp = required_exp_for_level(current_level)
@@ -83,6 +86,8 @@ def create_stats_embed(user, user_data, total_stats, role=None):
     embed.add_field(name="DEX", value=f"🎯 {base_dex} ({total_dex - base_dex:+d}) = **{total_dex}**", inline=True)
     embed.add_field(name="CRIT", value=f"💥 {base_crit} ({total_crit - base_crit:+d}) = **{total_crit}%**", inline=True)
     embed.add_field(name="MDMG", value=f"⚛️ {base_mdmg} ({total_mdmg - base_mdmg:+d}) = **{total_mdmg}**", inline=True)
+
+    embed.add_field(name="Inventory", value=f"📦 {inventory_count} / {max_slots} slots", inline=False)
 
     # Derive role from the Discord Member object (not from DB).
     # Prefer the member's top role but ignore the guild default/@everyone role.

@@ -355,20 +355,20 @@ def get_role_details(role_name):
 def update_user_money(user_id, amount_change):
     
     user_data = get_user_data(user_id)
-    (exp, level, current_money, last_daily_str, 
-     atk, spd, def_stat, dex, crit, mdmg, hp, mp, 
-     inventory_slots, equipped_weapon, equipped_armor, 
-     dice_rolls_today, last_dice_reset, last_fight_time, hunt_count, hunt_reset) = user_data
+    (exp, level, current_money, last_daily_str,
+     atk, spd, def_stat, dex, crit, mdmg, hp, mp,
+     inventory_slots, equipped_weapon, equipped_armor,
+     dice_rolls_today, last_dice_reset, last_fight_time, hunt_count, hunt_reset, max_inventory) = user_data
     
     new_money = current_money + amount_change
     
     if new_money < 0:
         new_money = 0
-        
-    update_full_user_data(user_id, exp, level, new_money, last_daily_str, 
-                          atk, spd, def_stat, dex, crit, mdmg, hp, mp, 
-                          inventory_slots, equipped_weapon, equipped_armor, 
-                          dice_rolls_today, last_dice_reset, last_fight_time, hunt_count, hunt_reset)
+
+    update_full_user_data(user_id, exp, level, new_money, last_daily_str,
+                          atk, spd, def_stat, dex, crit, mdmg, hp, mp,
+                          inventory_slots, equipped_weapon, equipped_armor,
+                          dice_rolls_today, last_dice_reset, last_fight_time, hunt_count, hunt_reset, max_inventory)
     return new_money
 
 def get_shift_config(guild_id):
@@ -1232,7 +1232,7 @@ async def handle_hunt_command(message):
         await message.channel.send(f"❌ **Jatah Hunt Habis!** Anda sudah berburu {MAX_DAILY_HUNT}x hari ini. Coba lagi besok!")
         return
     
-    (exp, level, money, last_daily, atk, spd, def_stat, dex, crit, mdmg, hp, mp, slots, equipped_weapon, equipped_armor, dice_rolls, dice_reset, fight_time, _, _) = user_data
+    (exp, level, money, last_daily, atk, spd, def_stat, dex, crit, mdmg, hp, mp, slots, equipped_weapon, equipped_armor, dice_rolls, dice_reset, fight_time, _, _, max_inventory) = user_data
     
     # Get monster
     monster = get_monster_for_level(level)
@@ -1535,7 +1535,7 @@ async def process_shift_claim(user_id, guild_id, reward_money, reward_exp, durat
     end_active_shift(user_id)
     
     user_data = get_user_data(user_id)
-    (exp, level, money, last_daily_str, atk, spd, def_stat, dex, crit, mdmg, hp, mp, slots, equipped_weapon, equipped_armor, dice_rolls, last_dice_reset, last_fight_time, hunt_count, hunt_reset) = user_data
+    (exp, level, money, last_daily_str, atk, spd, def_stat, dex, crit, mdmg, hp, mp, slots, equipped_weapon, equipped_armor, dice_rolls, last_dice_reset, last_fight_time, hunt_count, hunt_reset, max_inventory) = user_data
     
     new_exp = exp + reward_exp
     new_money = money + reward_money

@@ -47,7 +47,7 @@ class CombatCommands(BaseCommand):
         if hunt_count >= MAX_DAILY_HUNT:
             return {'status': 'no_quota', 'hunt_count': hunt_count}
 
-        (exp, level, money, last_daily, atk, spd, def_stat, dex, crit, mdmg, hp, mp, slots, equipped_weapon, equipped_armor, dice_rolls, dice_reset, fight_time, _, _) = user_data
+        (exp, level, money, last_daily, atk, spd, def_stat, dex, crit, mdmg, hp, mp, slots, equipped_weapon, equipped_armor, dice_rolls, dice_reset, fight_time, _, _, max_inventory) = user_data
 
         monster = get_monster_for_level(level)
         if not monster:
